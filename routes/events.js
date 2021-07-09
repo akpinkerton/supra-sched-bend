@@ -7,6 +7,7 @@ const rawTime = Date.now();
 const today=new Date(rawTime);
 const todayHours = today.getHours()
 const todayMinutes = today.getMinutes()
+const todaySeconds = today.getSeconds()
 
 
 // '/' === localhost:3002/events because we defined in app.js
@@ -30,7 +31,6 @@ router.get('/', function (req, res) {
   //console.log(`GET events submitted at ${todayHours}:${todayMinutes}`)
 })
 
-
 // '/' === localhost:3002/events because we defined in app.js
 router.post('/', function (req, res) {
   knex('anna')
@@ -52,7 +52,11 @@ router.post('/', function (req, res) {
       'The droids you are looking for could not be found. Please try again'
     })
   })
-  console.log(`POST submitted at ${todayHours}:${todayMinutes}. Input has been added.`)
+  if (req.body.event !== undefined) {
+    console.log(`POST submitted at ${todayHours}:${todayMinutes}:${todaySeconds}. ${req.body.event} has been added.`)
+  } else {
+  console.log(`POST submitted at ${todayHours}:${todayMinutes}:${todaySeconds}.. BUT IT WASNT SUPPOSED TO...🤬`)
+  }
 })
 
 // '/' === localhost:3002/events because we defined in app.js
@@ -60,7 +64,7 @@ router.delete('/', function (req, res) {
 // res.send('We got some text here! 🤞🏼')
 knex('anna')
 .del()
-.where({id : req.body.id})
+.where({xcd})
 .then(data => res.status(200).json(data))
    console.log(`DELETE submitted at ${todayHours}:${todayMinutes}. ${req.body.name}, with ID ${req.body.id} has been removed.`)
 })

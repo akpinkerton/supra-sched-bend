@@ -56,5 +56,9 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists('users').dropTableIfExists('anna').dropTableIfExists('roemello').dropTableIfExists('felix').dropTableIfExists('briana');
+  return knex.schema.dropTableIfExists('users')
+  .dropTableIfExists('anna')
+  .dropTableIfExists('roemello')
+  .dropTableIfExists('felix')
+  .dropTableIfExists('briana');
 };

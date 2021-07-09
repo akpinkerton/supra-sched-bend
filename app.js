@@ -1,3 +1,5 @@
+// SETTING UP DEV, TEST, PROD: https://mherman.org/blog/test-driven-development-with-node/
+
 var express = require('express');
 const cors = require("cors");
 
@@ -59,5 +61,6 @@ app.use(function(err, req, res, next) {
     }
   });
 });
+
 
 module.exports = app;
