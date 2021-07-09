@@ -28,7 +28,7 @@ router.get('/', function (req, res) {
       })
     );
 
-  console.log(`GET events submitted at ${todayHours}:${todayMinutes}🥲`)
+  console.log(`GET events submitted at ${todayHours}:${todayMinutes} `)
 })
 
 // '/' === localhost:3002/events because we defined in app.js
@@ -64,7 +64,7 @@ router.delete('/', function (req, res) {
 // res.send('We got some text here! 🤞🏼')
 knex('anna')
 .del()
-.where({xcd})
+.where({id : req.body.id})
 .then(data => res.status(200).json(data))
    console.log(`DELETE submitted at ${todayHours}:${todayMinutes}. ${req.body.name}, with ID ${req.body.id} has been removed.`)
 })
