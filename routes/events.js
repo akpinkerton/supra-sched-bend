@@ -28,7 +28,7 @@ router.get('/', function (req, res) {
       })
     );
 
-  //console.log(`GET events submitted at ${todayHours}:${todayMinutes}`)
+  console.log(`GET events submitted at ${todayHours}:${todayMinutes}🥲`)
 })
 
 // '/' === localhost:3002/events because we defined in app.js

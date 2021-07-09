@@ -16,7 +16,7 @@ router.get('/', function (req, res) {
         message:
           'The droids you are looking for could not be found. Please try again'
       }))
-      //console.log("GET times submitted")
+      //console.log("GET times submitted⏰")
 
 })
 
